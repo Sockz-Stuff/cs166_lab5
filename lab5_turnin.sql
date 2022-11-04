@@ -20,6 +20,6 @@ WHERE pid IN
 (SELECT pid FROM parts
 WHERE color = 'Green'));
 
-SELECT sname, pname FROM parts
-CROSS JOIN Suppliers;
-
+SELECT sname, pname
+FROM Parts, Suppliers, Catalog
+WHERE Parts.pid = Catalog.pid AND Suppliers.sid = Catalog.sid;
