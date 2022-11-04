@@ -25,5 +25,5 @@ Select sname
 				FROM Parts
 				WHERE color='Green'));
 Select sname,pname
- FROM Parts
- CROSS JOIN Suppliers;
+ FROM Parts,Suppliers,Catalog
+ WHERE Parts.pid=Catalog.pid AND Suppliers.sid=Catalog.sid;
